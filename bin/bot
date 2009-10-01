@@ -1,0 +1,4 @@
+#!/bin/sh
+
+cd `dirname "$0"`
+java -classpath ../dist/bot.jar:../dist/irc.jar:../lib/jdom.jar org.trypticon.bot.SimpleBot ../conf/SimpleBot.xml

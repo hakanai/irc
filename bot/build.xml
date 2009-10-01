@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<project name="bot" default="dist">
+
+    <target name="compile">
+        <mkdir dir="classes"/>
+        <javac srcdir="src" destdir="classes" debug="on">
+            <classpath>
+                <pathelement location="../irc/classes"/>
+                <pathelement location="../lib/jdom.jar"/>
+            </classpath>
+        </javac>
+    </target>
+
+    <target name="dist" depends="compile">
+        <mkdir dir="../dist"/>
+        <jar jarfile="../dist/bot.jar" basedir="classes"/>
+    </target>
+
+    <target name="clean">
+        <delete dir="classes"/>
+    </target>
+</project>

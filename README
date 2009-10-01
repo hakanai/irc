@@ -1,0 +1,19 @@
+
+A simple (and old...) IRC bot framework.
+
+I dusted this off as it was in my subversion repository, is in a relatively usable state,
+and might be useful for my other bot-related project later.
+
+Licence for the time being is GPLv3.
+
+Building:
+
+  Just run ant from the base directory.
+
+Using:
+
+  1. In the conf directory, take a copy of the example config file and name it SimpleBot.xml
+
+  2. Adjust the parameters.
+
+  3. Run ./bot from the bin directory.

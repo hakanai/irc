@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bot>
+    <adapter id="debug" class="org.trypticon.bot.adapters.debug.DebugAdapter"/>
+    <adapter id="ping" class="org.trypticon.bot.adapters.core.PingAdapter"/>
+
+    <adapter id="reconnect" class="org.trypticon.bot.adapters.core.ReconnectAdapter">
+        <param name="delay" value="10000"/>
+    </adapter>
+
+    <adapter id="identdSpoof" class="org.trypticon.bot.adapters.identd.IdentdSpoofAdapter">
+        <param name="spoofUser" value="wittyusername"/>
+    </adapter>
+
+    <adapter id="register" class="org.trypticon.bot.adapters.core.RegisterAdapter">
+        <param name="nick" value="frankie"/>
+        <param name="user" value="wittyusername"/>
+        <param name="pass" value=""/>
+        <param name="host" value="local.hostname.example.com"/>
+        <param name="realName" value="Frankie Frank"/>
+    </adapter>
+
+    <adapter id="channels" class="org.trypticon.bot.adapters.core.ChannelAdapter">
+        <param name="channels" value="#BotTesting"/>
+    </adapter>
+
+    <adapter id="portal" class="org.trypticon.bot.adapters.portal.LookingGlassAdapter">
+        <param name="name" value="efnet"/>
+        <param name="channel" value="#absinthe"/>
+        <param name="destination" value="foreverchat"/>
+    </adapter>
+
+    <adapter id="pigs" class="org.trypticon.bot.adapters.games.pigs.PassThePigs">
+        <param name="channel" value="#BotTesting"/>
+    </adapter>
+
+    <client id="efnet" localHost="0.0.0.0">
+        <server host="irc.Prison.NET" port="6667"/>
+        <adapter refid="debug"/>
+        <adapter refid="reconnect"/>
+        <adapter refid="ping"/>
+        <adapter refid="register"/>
+        <adapter refid="channels"/>
+        <!--<adapter refid="portal"/>-->
+        <!--<adapter refid="pigs"/>-->
+    </client>
+
+</bot>

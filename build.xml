@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<project name="irc" default="dist">
+
+    <target name="dist">
+        <ant dir="irc"/>
+        <ant dir="bot"/>
+    </target>
+
+    <target name="clean">
+        <ant dir="irc" target="clean"/>
+        <ant dir="bot" target="clean"/>
+        <delete dir="dist"/>
+    </target>
+</project>

@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<project name="irc" default="dist">
+
+    <target name="compile">
+        <mkdir dir="classes"/>
+        <javac srcdir="src" destdir="classes" debug="on"/>
+    </target>
+
+    <target name="dist" depends="compile">
+        <mkdir dir="../dist"/>
+        <jar jarfile="../dist/irc.jar" basedir="classes"/>
+    </target>
+
+    <target name="clean">
+        <delete dir="classes"/>
+    </target>
+</project>
